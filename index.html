@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTRO</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      animation: gradient-animation 1s ease infinite
+    }
+
+    .hero-section h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #cfd9df;
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3rem;
+      animation: bounce 2s infinite;
+      color: #ffffff90;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+    }
+
+    .profile-img {
+      height: 300px;
+      border-radius: 50%;
+    }
+
+    .carousel-control-prev {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .carousel-control-next {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .tech-icons {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tech-icons img {
+      width: 40px;
+      height: 40px;
+      opacity: 0.7;
+      transition: transform 0.3s ease;
+    }
+
+    .tech-icons img:hover {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+
+    .tech-icons-bottom {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .tech-icons-bottom img {
+      width: 40px;
+      height: 40px;
+      opacity: 0.7;
+    }
+
+    .stat-card {
+      background-color: #161b22;
+      border-radius: 10px;
+      padding: 20px 30px;
+      max-width: 600px;
+      margin: 50px auto;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      grid-area: 1/3/2/4;
+    }
+
+    .stat-title {
+      color: #58a6ff;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .stat-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 15px 0;
+    }
+
+    .stat-item i {
+      margin-right: 8px;
+      color: #58a6ff;
+    }
+
+    .dropdown-toggle {
+      background: none;
+      border: none;
+      color: #58a6ff;
+      cursor: pointer;
+    }
+
+    .dropdown-menu {
+      background-color: #21262d;
+      border: none;
+    }
+
+    .dropdown-item {
+      color: #c9d1d9;
+    }
+
+    .dropdown-item:hover {
+      background-color: #30363d;
+    }
+
+    .progress-circle {
+      position: relative;
+      width: 100px;
+      height: 100px;
+    }
+
+    .progress-circle svg {
+      transform: rotate(-90deg);
+    }
+
+    .progress-circle circle {
+      fill: none;
+      stroke-width: 10;
+    }
+
+    .progress-bg {
+      stroke: #2d333b;
+    }
+
+    .progress-bar {
+      stroke: #58a6ff;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 1s ease-out;
+    }
+
+    .progress-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #c9d1d9;
+    }
+
+    .easy {
+      stroke: #2ecc71;
+      transform: rotate(-90deg);
+      transform-origin: center;
+    }
+
+    .medium {
+      stroke: #f1c40f;
+      transform: rotate(-90deg);
+      transform-origin: center;
+    }
+
+    .hard {
+      stroke: #e74c3c;
+      transform: rotate(-90deg);
+      transform-origin: center;
+    }
+
+
+    .grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 2fr;
+      margin-bottom: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- first -->
+  <section class="hero-section">
+    <div class="tech-icons">
+      <img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML5" class="me-3">
+      <img src="https://img.icons8.com/color/48/css3.png" alt="CSS3" class="me-3">
+      <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript" class="me-3">
+      <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python">
+    </div>
+
+    <div>
+      <h1>Hello, I'm <span class="text-warning">Krishna Gupta <svg xmlns="http://www.w3.org/2000/svg" width="30"
+            height="30" fill="currentColor" class="bi bi-android2" viewBox="0 0 16 16 ">
+            <path
+              d="m10.213 1.471.691-1.26q.069-.124-.048-.192-.128-.057-.195.058l-.7 1.27A4.8 4.8 0 0 0 8.005.941q-1.032 0-1.956.404l-.7-1.27Q5.281-.037 5.154.02q-.117.069-.049.193l.691 1.259a4.25 4.25 0 0 0-1.673 1.476A3.7 3.7 0 0 0 3.5 5.02h9q0-1.125-.623-2.072a4.27 4.27 0 0 0-1.664-1.476ZM6.22 3.303a.37.37 0 0 1-.267.11.35.35 0 0 1-.263-.11.37.37 0 0 1-.107-.264.37.37 0 0 1 .107-.265.35.35 0 0 1 .263-.11q.155 0 .267.11a.36.36 0 0 1 .112.265.36.36 0 0 1-.112.264m4.101 0a.35.35 0 0 1-.262.11.37.37 0 0 1-.268-.11.36.36 0 0 1-.112-.264q0-.154.112-.265a.37.37 0 0 1 .268-.11q.155 0 .262.11a.37.37 0 0 1 .107.265q0 .153-.107.264M3.5 11.77q0 .441.311.75.311.306.76.307h.758l.01 2.182q0 .414.292.703a.96.96 0 0 0 .7.288.97.97 0 0 0 .71-.288.95.95 0 0 0 .292-.703v-2.182h1.343v2.182q0 .414.292.703a.97.97 0 0 0 .71.288.97.97 0 0 0 .71-.288.95.95 0 0 0 .292-.703v-2.182h.76q.436 0 .749-.308.31-.307.311-.75V5.365h-9zm10.495-6.587a.98.98 0 0 0-.702.278.9.9 0 0 0-.293.685v4.063q0 .406.293.69a.97.97 0 0 0 .702.284q.42 0 .712-.284a.92.92 0 0 0 .293-.69V6.146a.9.9 0 0 0-.293-.685 1 1 0 0 0-.712-.278m-12.702.283a1 1 0 0 1 .712-.283q.41 0 .702.283a.9.9 0 0 1 .293.68v4.063a.93.93 0 0 1-.288.69.97.97 0 0 1-.707.284 1 1 0 0 1-.712-.284.92.92 0 0 1-.293-.69V6.146q0-.396.293-.68" />
+          </svg></span></h1>
+      <p>Aspiring <span class="text-warning">Web Developer</span> crafting interactive and modern web experiences.</p>
+    </div>
+    <div class="tech-icons-bottom">
+      <img src="https://img.icons8.com/ios-filled/50/github.png" alt="GitHub" class="me-3">
+      <img src="https://img.icons8.com/color/48/visual-studio-code-2019.png" alt="VS Code" class="me-3">
+      <img src="https://img.icons8.com/color/48/mysql-logo.png" alt="MySQL">
+    </div>
+    <div class="scroll-down">
+      <span>&#8675;</span>
+    </div>
+  </section>
+  <!-- education -->
+
+  <section id="testimonial">
+    <div class="p-2 text-center bg-info-border-subtle bg-body-primary pb-5">
+      <div class="container py-5 ">
+        <h2 class="fw-bold text-secondary" style="text-transform: capitalize; ">"Developing myself to the best of
+          myself"</h2> <img src="./Adobe Express - file.png" alt="" class="profile-img mt-4">
+        <p class="col-lg-8 fw-bold text-secondary mx-auto lead mt-5 text-center">
+          I am an iOS and Web Developer. I'm a learner of new interesting skills. I ❤️ tech and to enter in new tech
+          fields.
+        </p>
+      </div>
+      <div class="container">
+        <h1 class="pb-5 text-secondary text-decoration-underline"
+          style="font-family: Georgia, 'Times New Roman', Times, serif;">Key Strengths</h1>
+
+      </div>
+
+      <div class="container">
+        <div id="carouselExampleIndicators" class="carousel carousel-dark slide">
+          <div class="carousel-indicators" style="height: 100px;">
+
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-xl-2 col-sm-12"><img src="./python.png" alt="" height="50"></div>
+                <div class="col-xl-2 col-sm-12"><img src="./Sql_data_base_with_logo.png" alt="" height="50"></div>
+                <div class="col-xl-2 col-sm-12"><img src="./java-coffee-cup-logo.png" alt="" height="50"></div>
+                <div class="col-xl-2 col-sm-12"><img src="./html-5.png" alt="" height="50"></div>
+                <div class="col-xl-2 col-sm-12"><img src="./css3.png" alt="" height="50"></div>
+                <div class="col-xl-2 col-sm-12"><img
+                    src="./pngtree-javascript-programming-language-code-coding-png-image_5288940.png" alt=""
+                    height="50"></div>
+                <div class="col-xl-2 col-sm-12">PYTHON</div>
+                <div class="col-xl-2 col-sm-12">MYSQL</div>
+                <div class="col-xl-2 col-sm-12">JAVA</div>
+                <div class="col-xl-2 col-sm-12">HTML5</div>
+                <div class="col-xl-2 col-sm-12">CSS3</div>
+                <div class="col-xl-2 col-sm-12">JAVASCRIPT</div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-xl-3 col-sm-12"><img src="./download.png" alt="" height="50"></div>
+                <div class="col-xl-3 col-sm-12"><img src="./Bootstrap_logo.svg.png" alt="" height="50"></div>
+                <div class="col-xl-3 col-sm-12"><img src="./React.webp" alt="" height="50"></div>
+                <div class="col-xl-3 col-sm-12"><img src="./node-js-icon-1817x2048-g8tzf91e.png" alt="" height="50">
+                </div>
+
+                <div class="col-xl-3 col-sm-12">C</div>
+                <div class="col-xl-3 col-sm-12">BOOTSTRAP FRAMEWORK</div>
+                <div class="col-xl-3 col-sm-12">REACT</div>
+                <div class="col-xl-3 col-sm-12">NODE JS</div>
+
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev p-0 btn  " type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="grid mt-5 px-5">
+
+    <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
+      <h1 class=" text-secondary text-decoration-underline text-center"
+        style="font-family: Georgia, 'Times New Roman', Times, serif; padding-bottom: 0;">Languages Known</h1>
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+
+
+      <div class="carousel-inner" style="margin-top: 50px;">
+        <div class="carousel-item active" data-bs-interval="5000">
+          <img src="https://pythonlife.in/images/pythonlogo.png" class="d-block w-100" alt="..." >
+
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="https://datapro.in/uploads/1a73de2b9ea968a014158e1af9839dc0.png" width="522" height="470"
+            class="d-block w-100" alt="..." style="border-radius: 10%;">
+
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="https://www.sunucuteknik.com/wp-content/uploads/2022/02/java.jpg" width="522" height="470"
+            class="d-block w-100" alt="..." style="border-radius: 10%;">
+
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="stat-card" style="height: 350px; width: 500px; margin-top: 100px;">
+      <div class="stat-title ">
+        <p class="text-center text-uppercase text-decoration-underline pb-0"
+          style="font-family: Georgia, 'Times New Roman', Times, serif;"> MY Tech Stats</p>
+      </div>
+      <div class="d-flex justify-content-start mb-3">
+        <div>
+          <div class="stat-item">
+            <div><i class="fas fa-code"></i> <span class="text-light">Projects Completed:</span></div>
+            <div class="dropdown">
+              <button class="dropdown-toggle" data-bs-toggle="dropdown">7</button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><span class="dropdown-item disabled">Chat GPT voice module</span></li>
+                <li><span class="dropdown-item disabled">Weather App</span></li>
+                <li><span class="dropdown-item disabled">Speech Recogniser</span></li>
+                <li><span class="dropdown-item disabled">Chat App</span></li>
+                <li><span class="dropdown-item disabled">zomato Clone</span></li>
+                <li><span class="dropdown-item disabled">Face Recognition Attendance</span></li>
+                <li><span class="dropdown-item disabled">Image To Text Convertor</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div><i class="fas fa-brain"></i> <span class="text-light">Learning/DSA Platforms:</span></div>
+            <div class="dropdown">
+              <button class="dropdown-toggle" data-bs-toggle="dropdown">7</button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><span class="dropdown-item">Codechef</span></li>
+                <li><span class="dropdown-item">Leetcode</span></li>
+                <li><span class="dropdown-item">GeeksforGeeks</span></li>
+                <li><span class="dropdown-item">Codeforces</span></li>
+                <li><span class="dropdown-item">BinarySearch</span></li>
+                <li><span class="dropdown-item">HackerRank</span></li>
+                <li><span class="dropdown-item">Udemy</span></li>
+                
+              </ul>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div><i class="fas fa-clock"></i><span class="text-light">Years of Experience:</span> </div>
+            <div class="dropdown">
+              <button class="dropdown-toggle" data-bs-toggle="dropdown">2+</button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><span class="dropdown-item disabled">Freelance Projects</span></li>
+                <li><span class="dropdown-item disabled">Hackathons</span></li>
+                <li><span class="dropdown-item disabled">Open Source</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div><i class="fas fa-tools"></i><span class="text-light">Tools/Frameworks:</span> </div>
+            <div class="dropdown">
+              <button class="dropdown-toggle" data-bs-toggle="dropdown">10+</button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><span class="dropdown-item disabled">Bootstrap</span></li>
+                <li><span class="dropdown-item disabled">React</span></li>
+                <li><span class="dropdown-item disabled">Node.js</span></li>
+                <li><span class="dropdown-item disabled">Git & GitHub</span></li>
+                <li><span class="dropdown-item disabled">HTML5</span></li>
+                <li><span class="dropdown-item disabled">Python</span></li>
+                <li><span class="dropdown-item disabled">MySQL</span></li>
+                <li><span class="dropdown-item disabled">JavaScript</span></li>
+                <li><span class="dropdown-item disabled">Java</span></li>
+                <li><span class="dropdown-item disabled">C</span></li>
+                <li><span class="dropdown-item disabled">Cascading StyleSheet</span></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="progress-circle ms-5 text-center position-relative">
+          <svg width="160" height="160">
+
+            <circle cx="80" cy="80" r="60" stroke="#2d333b" stroke-width="10" fill="none" />
+            <circle cx="80" cy="80" r="45" stroke="#2d333b" stroke-width="10" fill="none" />
+            <circle cx="80" cy="80" r="30" stroke="#2d333b" stroke-width="10" fill="none" />
+
+
+            <circle class="easy" cx="80" cy="80" r="60" stroke-width="10" fill="none" stroke-dasharray="377"
+              stroke-dashoffset="377" />
+            <circle class="medium" cx="80" cy="80" r="45" stroke-width="10" fill="none" stroke-dasharray="283"
+              stroke-dashoffset="283" />
+            <circle class="hard" cx="80" cy="80" r="30" stroke-width="10" fill="none" stroke-dasharray="188"
+              stroke-dashoffset="188" />
+          </svg>
+
+
+          <div class=" translate-middle text-center"
+            style="line-height: 2;width: 200px; position: relative; left: 80px; top: 50px;">
+            <div>
+              <h6 class="text-info text-uppercase text-decoration-underline mb-0"
+                style="font-family: Georgia, 'Times New Roman', Times, serif;">My DSA stats </h6>
+            </div>
+            <div style="font-size: 0.9rem; color: #2ecc71;">Easy--> 45 / 50 </div> <!-- Easy -->
+            <div style="font-size: 0.9rem;  color: #f1c40f;">Medium-->30 / 50</div> <!-- Medium -->
+            <div style="font-size: 0.9rem; color: #e74c3c;">Hard-->40 / 40</div> <!-- Hard -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- contact me -->
+  <section>
+    <div class="px-4 pb-5 mb-5 text-center"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"
+        fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0M14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1M8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
+      </svg>
+      <h1 class="display-5  text-body-emphasis"
+        style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Let's <span
+          class="text-warning">Connect</span> </h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Have interest in Tech? Connect and let me know. </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"> <a
+            href="https://www.linkedin.com/in/krishna-gupta-b93528326/" target="_blank"><button type="button"
+              class="btn btn-info text-light btn-lg px-4 gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                height="20" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                <path
+                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+              </svg> LinkedIn</button></a> </div>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+  <section class="bg-info d-flex align-items-center" style="height: 150px;">
+    <div class="container " style="width: 1400px;">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top ">
+        <div class="col-md-4 d-flex align-items-center"> <a href="#"
+            class="mb-3 me-2 mb-md-0 text-light text-decoration-none lh-1" aria-label="Bootstrap"><svg
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+              class="bi bi-file-earmark-person" viewBox="0 0 16 16">
+              <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+              <path
+                d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5z" />
+            </svg> </a> <span class="mb-3 mb-md-0  text-light text-uppercase">© Krishna Gupta, © TECHIE</span> </div>
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a class="text-light" href="https://www.instagram.com/__kriiisshnaaa/" target="_blank"
+              aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                class="bi bi-instagram" viewBox="0 0 16 16">
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+              </svg></a></li>
+          <li class="ms-3"><a class="text-light" href="https://github.com/kriisshnaaa" aria-label="github"
+              target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                class="bi bi-github" viewBox="0 0 16 16">
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+              </svg></a></li>
+        </ul>
+      </footer>
+    </div>
+  </section>
+
+
+  <script>
+    function setCircularProgress(selector, percent, radius) {
+      const circle = document.querySelector(selector);
+      const circumference = 2 * Math.PI * radius;
+      const offset = circumference - (percent / 100) * circumference;
+
+      circle.style.strokeDasharray = `${circumference}`;
+      circle.style.strokeDashoffset = offset;
+    }
+
+    setCircularProgress('.easy', 90, 60);
+    setCircularProgress('.medium', 60, 45);
+    setCircularProgress('.hard', 30, 30);     
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
