@@ -220,6 +220,64 @@
       grid-template-columns: 2fr 1fr 2fr;
       margin-bottom: 200px;
     }
+    @media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .profile-img {
+    height: 200px;
+    width: 200px;
+  }
+
+  .grid {
+    display: block;
+    margin-bottom: 100px;
+  }
+
+  .stat-card {
+    width: 100% !important;
+    margin: 20px auto;
+  }
+
+  .progress-circle {
+    margin: 30px auto;
+    width: 150px;
+    height: 150px;
+  }
+
+  .carousel .carousel-item .row > div {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .footer .container {
+    width: 100% !important;
+  }
+
+  .tech-icons, .tech-icons-bottom {
+    position: static;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .tech-icons img,
+  .tech-icons-bottom img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
   </style>
 </head>
 
@@ -328,7 +386,7 @@
       </div>
     </div>
   </section>
-  <div class="grid mt-5 px-5">
+  <div class="grid mt-5 px-3">
 
     <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
       <h1 class=" text-secondary text-decoration-underline text-center"
@@ -500,7 +558,7 @@
   </section>
   <!-- footer -->
   <section class="bg-info d-flex align-items-center" style="height: 150px;">
-    <div class="container " style="width: 1400px;">
+    <div class="container ">
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top ">
         <div class="col-md-4 d-flex align-items-center"> <a href="#"
             class="mb-3 me-2 mb-md-0 text-light text-decoration-none lh-1" aria-label="Bootstrap"><svg
